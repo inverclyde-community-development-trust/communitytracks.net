@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Community Tracks | Active travel hub in Inverclyde | Walking and Cycling</title>
+    <meta name="description" content="Community Tracks Inverclyde will establish an active travel hub within Inverclyde, supporting and encouraging local people to make more journeys by bike or by foot">
+
+    <!-- Google / Search Engine Tags -->
+    <meta itemprop="name" content="Community Tracks | Active travel hub in Inverclyde | Walking and Cycling">
+    <meta itemprop="description" content="Community Tracks Inverclyde will establish an active travel hub within Inverclyde, supporting and encouraging local people to make more journeys by bike or by foot">
+    <meta itemprop="image" content="https://communitytracks.net/promo-image.jpg">
+
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="https://communitytracks.net">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Community Tracks | Active travel hub in Inverclyde | Walking and Cycling">
+    <meta property="og:description" content="Community Tracks Inverclyde will establish an active travel hub within Inverclyde, supporting and encouraging local people to make more journeys by bike or by foot">
+    <meta property="og:image" content="https://communitytracks.net/promo-image.jpg">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Community Tracks | Active travel hub in Inverclyde | Walking and Cycling">
+    <meta name="twitter:description" content="Community Tracks Inverclyde will establish an active travel hub within Inverclyde, supporting and encouraging local people to make more journeys by bike or by foot">
+    <meta name="twitter:image" content="https://communitytracks.net/promo-image.jpg">
+
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body class="<%= body_class %>">
+    <%= render 'nav' %>
+
+    <div class="container">
+      <% flash.each do |key, value| %>
+        <div class="alert alert-<%= key %> alert-dismissible fade show mt-4 shadow-sm" role="alert">
+          <%= value %>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <% end %>
+    </div>
+
+    <h3 class="d-lg-none p0 mt-3 mb-5 text-center">
+      An active travel hub that supports walking and cycling in Inverclyde
+    </h3>
+
+    <%= yield %>
+
+    <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12 col-md-6 col-lg-2" >
+        <%= image_tag("/images/footer1.jpg", class: "img_fluid") %>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-2">
+        <%= image_tag("/images/footer2.png", class: "img_fluid") %>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-2">
+        <%= image_tag("/images/footer3.png", class: "img_fluid") %>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-2">
+        <%= image_tag("/images/footer4.png", class: "img_fluid") %>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-2">
+        <%= image_tag("/images/footer51.png", class: "img_fluid") %>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-2">
+        <%= image_tag("/images/footer6.jpg", class: "img_fluid") %>
+      </div>
+
+    </div>
+  </div>
+    <%= javascript_pack_tag 'application' %>
+
+        <script>
+          (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = 'https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.12';
+            fjs.parentNode.insertBefore(js, fjs);
+           }(document, 'script', 'facebook-jssdk'));
+        </script>
+        <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+
+
+  </body>
+</html>

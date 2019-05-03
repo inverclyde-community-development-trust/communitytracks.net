@@ -1,0 +1,19 @@
+<%= simple_form_for(@user, url: user_sessions_path, html: {class: "text-center"}) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :email, placeholder: "Email", label: false %>
+    <%= f.input :password, placeholder: "Password", label: false %>
+  </div>
+
+  <div class="checkbox mb-3">
+    <label>
+      <input type="checkbox" name="user[remember]" value="true"> Remember me
+    </label>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Sign in", class: "btn btn-lg btn-primary btn-block" %>
+  </div>
+<% end %>

@@ -1,0 +1,21 @@
+<% if @ward_data.present? %>
+  <%= react_component("Container", { ward: @ward_data }) %>
+<% end %>
+
+<div class="container-fluid">
+  <div class="row d-flex justify-content-around">
+      <% @ward_councillors.each do |ward_councillor| %>
+        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-4">
+          <div class="card bg-light" style="width: 18rem;">
+            <%= image_tag ward_councillor.photo_url, class: "card-img-top", alt: ward_councillor.name   %>
+            <div class="card-body">
+              <h5 class="card-title"><%= ward_councillor.name %></h5>
+            </div>
+            <div class="card-footer d-flex justify-content-around">
+              <a href="<%= ward_councillor.council_url %>" class="card-link btn btn-primary" target="_blank">More Details</a>
+            </div>
+          </div>
+        </div>
+      <% end %>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+<h1>New contact submission</h1>
+
+<p>
+  View it in the admin <%= link_to 'here', admin_contact_submission_url(@submission) %>
+</p>
+
+<h3>Email</h3>
+<p><%= @submission.email %></p>
+
+
+<h3>Text</h3>
+<p><%= @submission.text %></p>

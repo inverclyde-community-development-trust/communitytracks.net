@@ -1,0 +1,20 @@
+{
+  "name": "inverclyde-community-tracks",
+  "private": true,
+  "dependencies": {
+    "@rails/webpacker": "3.5",
+    "babel-preset-react": "^6.24.1",
+    "cross-fetch": "^3.0.0",
+    "prop-types": "^15.6.2",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "react-google-maps": "^9.4.5",
+    "react-select": "^2.1.0",
+    "react_ujs": "^2.4.4",
+    "reactstrap": "^6.5.0",
+    "recompose": "^0.30.0"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "2.11.2"
+  }
+}

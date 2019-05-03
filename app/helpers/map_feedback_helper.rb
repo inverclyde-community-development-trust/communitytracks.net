@@ -1,0 +1,2 @@
+module MapFeedbackHelper
+end

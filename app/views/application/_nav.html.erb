@@ -1,0 +1,32 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-primary">
+  <%= link_to root_path, class: "navbar-brand" , data: { turbolinks: false } do %>
+    <%= image_tag("/images/logo.png") %>
+  <% end %>
+      <p class="d-none d-lg-block text-center text-white pt-3">
+      An active travel hub that supports walking and cycling in Inverclyde
+    </p>
+
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <%= active_link_to 'Home', root_path, class: "nav-link", wrap_tag: :li, wrap_class: 'nav-item', active: :exclusive, data: { turbolinks: false }  %>
+      <li class="nav-item dropdown<%= ' active' if controller_name == 'wards' %>" >
+        <a href class="nav-link dropdown-toggle" id="wardsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Wards
+        </a>
+        <div class="dropdown-menu" aria-labelledby="wardsDropdown">
+          <% @wards.map do |ward| %>
+            <%= active_link_to ward.name, ward_path(slug: ward.url_slug), class: "dropdown-item", active: :exclusive, data: { turbolinks: false } %>
+          <% end %>
+        </div>
+      </li>
+      <%= active_link_to 'About', about_path, class: "nav-link", wrap_tag: :li, wrap_class: 'nav-item', active: :exclusive %>
+      <%= active_link_to 'Contact', contact_path, class: "nav-link", wrap_tag: :li, wrap_class: 'nav-item', active: :exclusive %>
+      <%= active_link_to 'Bike Workshop', bike_path, class: "nav-link", wrap_tag: :li, wrap_class: 'nav-item', active: :exclusive %>
+      <%= active_link_to 'Activities', activities_path, class: "nav-link", wrap_tag: :li, wrap_class: 'nav-item', active: :exclusive %>
+    </ul>
+  </div>
+</nav>

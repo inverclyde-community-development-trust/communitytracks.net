@@ -1,0 +1,17 @@
+<div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-4">
+  <div class="card bg-light">
+    <% if event.image.attached? %>
+      <%= image_tag event.image, class: "card-img-top", alt: event.name %>
+    <% end %>
+    <div class="card-body">
+      <h5 class="card-title"><%= event.name %></h5>
+      <h6 class="card-subtitle mb-2 ">
+        <%= event_time(event) %>
+      </h6>
+    </div>
+    <div class="card-footer justify-content-between align-items-center d-flex">
+      <%= event.organisation %>
+      <a href="<%= event.website %>" class="card-link btn btn-primary">More Details</a>
+    </div>
+  </div>
+</div>

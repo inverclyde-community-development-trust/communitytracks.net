@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+<p>
+  <strong>
+  <%= @post.title %>
+  </strong>
+</p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm">
+      <%= @post.body %>
+    </div>
+    <div class="col-sm">
+      <%= image_tag( @post.image )%>
+    </div>
+
+</div>
+<p>
+
+</p>
+
+<%= link_to 'Back', root_path %>
